@@ -16,4 +16,4 @@ marcia_survey = Survey.create!([{title: "title here!", author_id: marcia.first.i
 joseph_survey = Survey.create!([{title: "title here!", author_id: joseph.first.id, description: "this is the description", link:"test link!"}])
 dennis_survey = Survey.create!([{title: "title here!", author_id: dennis.first.id, description: "this is the description", link:"test link!"}])
 
-andrew_questions = Question.create!({survey_id: andrew_survey.first.id, order_number: 1, type: Integer, text: "Example Text!", required: true})
+andrew_questions = Question.create!({survey_id: andrew_survey.first.id, order_number: 1, question_type: "string" , text: "Example Text!", required: true})
