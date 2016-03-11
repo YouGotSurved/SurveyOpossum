@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>SurveyOpossum</title>
+  <link type="text/css" rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
+
+    <header class="global-header">
+      <div class="global-header-title">
+        Survey <img alt="Opossum" height="50" width="50" src="./assets/possum-icon.png" class="possum-logo"> Opossum
+      </div>
+      <ul class="global-nav-container">
+        <li class="global-nav-btn" id="my-survey-btn">My Surveys</li>
+        <li class="global-nav-btn" id="survey-deisgner-btn">Survey Designer</li>
+        <li class="global-nav-btn" id="profile-btn">Profile</li>
+        <li class="global-nav-btn" id="support-btn">Support</li>
+        <li class="global-nav-btn" id="logout-btn">Logout</li>
+      </ul>
+    </header>
 
 <%= yield %>
 
-</body>
+    <footer class="global-footer" id="">
+      <div>My Footer</div>
+    </footer>
+
+  </body>
 </html>

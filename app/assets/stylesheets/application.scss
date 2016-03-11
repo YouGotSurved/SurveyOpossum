@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$default-font-size: 1em;
+$default-font-family: "Arial", sans-serif;
+
+body {
+  margin: 1% 5%;
+  font: {
+    family: $default-font-family;
+    size: $default-font-size;
+  }
+}
+
+.global-header-title {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.global-header, .global-footer {
+  border: 1px solid #bbb;
+  width: 100%;
+  border-radius: 5px;
+  background: #efefef;
+  padding: 10px;
+}
+
+.global-header {
+  height: 90px;
+  margin-bottom: 1em;
+}
+
+.global-footer {
+  height: 70px;
+  margin-top: 1em;
+}
+
+.possum-logo {
+  margin-bottom: -18px;
+}
+
+.global-nav-container {
+  margin: 2em;
+  text-align: center;
+  border: 1px dashed blue;
+}
+
+.global-nav-btn {
+  padding: 0 1em;
+  margin: 0 0.3em;
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #aaa, #eee );
+  // font-weight: bolder;
+  font-size: 0.9em;
+}
