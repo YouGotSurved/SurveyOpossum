@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
   # GET /authors
   def index
@@ -49,6 +50,7 @@ class AuthorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_author
       @author = Author.find(params[:id])
+      redirect_to survey_path unless @author.id == session[:author_id]
     end
 
     # Only allow a trusted parameter "white list" through.
