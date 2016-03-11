@@ -27,7 +27,20 @@
     <%= f.label :link %><br>
     <%= f.text_field :link %>
   </div>
+
+  <h3> Questions </h3>
+    <%= f.fields_for :questions do |ff| %>
+    <div>
+      <%= ff.text_field :text, placeholder: "Your Question" %>
+      <%= ff.text_field :order_number, placeholder: "Order"  %>
+      <%= ff.text_field :question_type, placeholder: "Question Type" %>
+      <%= ff.hidden_field :survey_id, :value => params["survey_id"]%>
+
+
+    </div>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

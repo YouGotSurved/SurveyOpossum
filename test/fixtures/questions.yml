@@ -3,13 +3,13 @@
 one:
   survey_id: 1
   order_number: 1
-  type: 
+  question_type:
   text: MyText
   required: false
 
 two:
   survey_id: 1
   order_number: 1
-  type: 
+  question_type: 
   text: MyText
   required: false

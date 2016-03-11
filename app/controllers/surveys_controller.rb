@@ -13,10 +13,12 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
+    @survey.questions.build
   end
 
   # GET /surveys/1/edit
   def edit
+    @survey.questions.build
   end
 
   # POST /surveys
@@ -53,6 +55,6 @@ class SurveysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:title, :author_id, :description, :link)
+      params.require(:survey).permit(:title, :author_id, :description, :link, questions_attributes: [:id, :order_number, :question_type, :text, :required], answers_attributes: [:id, :question_id, :text])
     end
 end
