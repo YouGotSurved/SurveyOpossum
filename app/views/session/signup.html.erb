@@ -1,2 +1,16 @@
-<h1>Session#signup</h1>
-<p>Find me in app/views/session/signup.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<h1>Create Your Account</h1>
+
+<%= form_tag(session_signup_path) do %>
+
+  <p><%= label_tag :name %>
+  <%= text_field_tag :name %></p>
+
+  <p><%= label_tag :password %>
+  <%= password_field_tag :password %></p>
+
+  <%= submit_tag "Sign Up" %>
+<% end %>
