@@ -10,7 +10,6 @@ marcia = Author.create!([{name: "marcia", password: "password" }])
 joseph = Author.create!([{name: "joseph", password: "password" }])
 dennis = Author.create!([{name: "dennis", password: "password" }])
 
-
 andrew_survey = Survey.create!([{title: "title here!", author_id: andrew.first.id, description: "this is the description", link:"test link!"}])
 marcia_survey = Survey.create!([{title: "title here!", author_id: marcia.first.id, description: "this is the description", link:"test link!"}])
 joseph_survey = Survey.create!([{title: "title here!", author_id: joseph.first.id, description: "this is the description", link:"test link!"}])
