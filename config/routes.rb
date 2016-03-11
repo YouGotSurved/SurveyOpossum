@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :authors
   resources :surveys
+
+  get 'survey/take'
+  post 'survey/take'
+
   get 'session/login'
   post 'session/login'
 

@@ -36,6 +36,10 @@ class SurveysController < ApplicationController
     end
   end
 
+  def take
+    
+  end
+
   # PATCH/PUT /surveys/1
   def update
     if @survey.update(survey_params)
@@ -54,8 +58,8 @@ class SurveysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
-      @survey = Survey.find(params[:id])
-      redirect_to surveys_url unless @survey.author_id == session[:author_id]
+      @survey = Survey.where(id: params[:id]).first
+      redirect_to surveys_url unless @survey != nil && @survey.author_id == session[:author_id]
     end
 
     # Only allow a trusted parameter "white list" through.
