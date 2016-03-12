@@ -1,0 +1,53 @@
+<%= form_for (@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p><%= @survey.title %></p>
+  </div>
+  <div class="field">
+    <p><%= f.label :description %>:
+    <%= @survey.description %>
+  </div>
+
+  <% f.label :author_id %><br>
+  <%= f.hidden_field :author_id, :value => session[:author_id] %>
+
+  <h3> Questions </h3>
+  <ol>
+    <%= f.fields_for :questions do |ff| %>
+      <%= f.fields_for :answers do |gg| %>
+      <li>
+        <div>
+          Q: <%=ff.object.text%> <br>
+          <% if ff.object.question_type == "YesNo" %>
+            Answer <%= radio_button_tag(:text, "Yes") %> <%= label_tag(:text_yes, "Yes") %>
+            <%= radio_button_tag(:text, "No") %> <%= label_tag(:text_no, "No") %>
+          <% elsif ff.object.question_type == "ShortAnswer" %>
+            Answer <% gg.label :text %>
+            <%= gg.text_field :text %>
+          <% else %>
+            Answer <% gg.label :text %>
+            <%= gg.text_area :text, size: "24x6" %>
+          <% end %>
+          <%= ff.hidden_field :survey_id, :value => @survey.id%>
+          <%= gg.hidden_field :question_id, :value => ff.object.id%>
+        </div>
+      </li>
+      <% end %>
+    <% end %>
+  </ol>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
