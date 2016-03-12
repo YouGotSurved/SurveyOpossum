@@ -33,21 +33,26 @@ body {
   text-align: center;
 }
 
-.global-header, .global-footer {
+.global-header, .global-footer-top {
   border: 1px solid #bbb;
   width: 100%;
-  border-radius: 5px;
   background: #efefef;
   padding: 10px;
+}
+
+.global-footer-top {
+  border-bottom: 0px;
+  border-radius: 5px 5px 0 0;
 }
 
 .global-header {
   height: 80px;
   margin-bottom: 1em;
+  border-radius: 5px;
 }
 
-.global-footer {
-  height: 50px;
+.global-footer-container {
+  // height: 50px;
   margin-top: 1em;
 }
 
@@ -81,4 +86,50 @@ body {
     color: $default-font-color;
     background-image: linear-gradient(to top, #eee, #aaa);
   }
+}
+
+.global-footer-product-container,
+.global-footer-company-container,
+.global-footer-connect-container {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.4em;
+}
+
+.global-footer-product-title,
+.global-footer-company-title,
+.global-footer-connect-title {
+  font-weight: bolder;
+  font-size: 0.9em;
+}
+
+.global-footer-product,
+.global-footer-company,
+.global-footer-connect {
+  font-size: 0.8em;
+  a {
+    text-decoration: none;
+    &:hover {
+      background: none;
+      text-decoration: underline;
+      color: #666;
+    }
+  }
+
+}
+
+.sub-global-footer {
+  background: #444;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  font-size: 0.7em;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.sub-global-footer-teammembers {
+  padding: 0 4px;
+  display: inline-block;
 }

@@ -3,6 +3,7 @@
 <head>
   <title>SurveyOpossum</title>
   <link type="text/css" rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -24,8 +25,72 @@
 
 <%= yield %>
 
-    <footer class="global-footer" id="">
-      <div>My Footer</div>
+    <footer class="global-footer-container" id="">
+      <div class="global-footer-top">
+        <div class="global-footer-product-container">
+          <div class="global-footer-product-title">
+            Product
+          </div>
+          <div class="global-footer-product">
+            <a href="#">My Surveys</a>
+          </div>
+          <div class="global-footer-product">
+            <a href="#">Survey Designer</a>
+          </div>
+          <div class="global-footer-product">
+            <a href="#">Profile</a>
+          </div>
+          <div class="global-footer-product">
+            <a href="#">Support</a>
+          </div>
+          <div class="global-footer-product">
+            <a href="#">Logout</a>
+          </div>
+        </div> <!--End global-footer-product-->
+        <div class="global-footer-company-container">
+          <div class="global-footer-company-title">
+            Company
+          </div>
+          <div class="global-footer-company">
+            <a href="#">About Us</a>
+          </div>
+          <div class="global-footer-company">
+            <a href="#">Blog</a>
+          </div>
+          <div class="global-footer-company">
+            <a href="#">Jobs</a>
+          </div>
+          <div class="global-footer-company">
+            <a href="#">Contact Us</a>
+          </div>
+        </div>  <!--End global-footer-company-->
+        <div class="global-footer-connect-container">
+          <div class="global-footer-connect-title">
+            Connect
+          </div>
+          <div class="global-footer-connect">
+            <a href="#">placeholder</a>
+          </div>
+          <div class="global-footer-connect">
+            <a href="#">placeholder</a>
+          </div>
+          <div class="global-footer-connect">
+            <a href="#">placeholder</a>
+          </div>
+          <div class="global-footer-connect">
+            <a href="#">placeholder</a>
+          </div>
+        </div>  <!--End global-footer-connect-->
+      </div>
+      <div class="sub-global-footer">
+        <div class="sub-global-footer-teamname">You Got Surved</div>
+        <div class="sub-global-footer-team">
+          <div class="sub-global-footer-teammembers">Andrew</div>
+          <div class="sub-global-footer-teammembers">Marcia</div>
+          <div class="sub-global-footer-teammembers">Dennis</div>
+          <div class="sub-global-footer-teammembers">Joseph</div>
+        </div>
+      </div> <!--End sub-global-footer -->
     </footer>
 
   </body>
