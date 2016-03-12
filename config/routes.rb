@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/surveys/take/:id', to: 'surveys#take'
+  get '/surveys/:id/take', to: 'surveys#take'
+  patch '/surveys/take/:id', to: 'surveys#store'
 
   resources :authors
   resources :surveys
