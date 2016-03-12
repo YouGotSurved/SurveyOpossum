@@ -18,6 +18,7 @@ $default-font-size: 1em;
 $default-font-family: "Arial", sans-serif;
 $default-font-color: #000;
 $default-btn-gradient: linear-gradient(to top, #aaa, #eee);
+$default-btn-gradient-hover: linear-gradient(to top, #eee, #aaa);
 
 body {
   margin: 1% 5%;
@@ -41,6 +42,7 @@ body {
 }
 
 .global-footer-top {
+  // border: 1px dashed blue; 
   border-bottom: 0px;
   border-radius: 5px 5px 0 0;
 }
@@ -71,7 +73,7 @@ body {
   display: inline-block;
   border: 1px solid #aaa;
   border-radius: 5px;
-  background-image: linear-gradient(to top, #aaa, #eee);
+  background-image: $default-btn-gradient;
   font-size: 0.9em;
 }
 
@@ -84,7 +86,7 @@ body {
   &:hover {
     background: none;
     color: $default-font-color;
-    background-image: linear-gradient(to top, #eee, #aaa);
+    background-image: $default-btn-gradient-hover;
   }
 }
 
@@ -94,6 +96,11 @@ body {
   display: inline-block;
   vertical-align: top;
   padding: 0.4em;
+}
+
+.global-footer-top-wrapper {
+  width: 37%;
+  margin: 0 auto;
 }
 
 .global-footer-product-title,
@@ -115,7 +122,27 @@ body {
       color: #666;
     }
   }
+}
 
+.global-footer-connect {
+  display: inline-block;
+  border-radius: 1.4em;
+  // border-radius: 50%;
+  border: 1px solid #000;
+  width: 1.4em;
+  height: 1.4em;
+  padding: 9px 6px 3px 6px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  // vertical-align: top;
+  &:hover{
+    background: #aaa;
+    // border: 1px solid white;
+    a{
+      color: black;
+    }
+  }
 }
 
 .sub-global-footer {
