@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  get '/surveys/take/:id', to: 'surveys#take'
+
   resources :authors
   resources :surveys
 
-  get 'survey/take'
-  post 'survey/take'
 
   get 'session/login'
   post 'session/login'

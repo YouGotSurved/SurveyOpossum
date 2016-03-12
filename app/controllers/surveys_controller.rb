@@ -1,13 +1,10 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :take, :destroy]
   before_action :logged_in?
 
   # GET /surveys
   def index
     @surveys = Survey.where(author_id: session["author_id"])
-    puts @surveys.length
-    puts "HEY!!!!!!"
-
   end
 
   # GET /surveys/1
@@ -37,7 +34,6 @@ class SurveysController < ApplicationController
   end
 
   def take
-    
   end
 
   # PATCH/PUT /surveys/1
