@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     if author && author.authenticate(params[:password])
       session[:author_id] = author.id
       session[:role] = "author"
-      redirect_to authors_path, notice: "You have succesfully logged in!"
+      redirect_to surveys_path, notice: "You have succesfully logged in!"
     else
       flash.now[:alert] = "Login failed: invalid email or password."
       render "login"
@@ -16,10 +16,13 @@ class SessionController < ApplicationController
   end
 
   def logout
+    session[:author_id] = nil
+    session[:role] = nil
+    redirect_to session_login_path, notice: "See you next time!"
   end
 
   def signup
-    
+
   end
 end
 

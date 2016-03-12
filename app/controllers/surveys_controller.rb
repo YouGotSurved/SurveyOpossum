@@ -1,9 +1,13 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
   # GET /surveys
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(author_id: session["author_id"])
+    puts @surveys.length
+    puts "HEY!!!!!!"
+
   end
 
   # GET /surveys/1
@@ -32,6 +36,10 @@ class SurveysController < ApplicationController
     end
   end
 
+  def take
+    
+  end
+
   # PATCH/PUT /surveys/1
   def update
     if @survey.update(survey_params)
@@ -50,7 +58,8 @@ class SurveysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
-      @survey = Survey.find(params[:id])
+      @survey = Survey.where(id: params[:id]).first
+      redirect_to surveys_url unless @survey != nil && @survey.author_id == session[:author_id]
     end
 
     # Only allow a trusted parameter "white list" through.
