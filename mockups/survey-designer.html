@@ -1,0 +1,45 @@
+<!DOCTYPE>
+
+<html>
+
+  <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="survey-designer.css">
+    <title>Survey Designer</title>
+  </head>
+
+  <body>
+    <div class="survey-designer-wrapper">
+      <div class="survey-designer-title">
+        Survey Designer
+      </div>
+      <div class="survey-designer-survey-wrapper">
+        <div class="survey-designer-survey-title-description">
+          <label class="survey-title-label">Survey Name</label>
+          <input class="new-survey-title">
+          <label class="survey-description-label">Survey Description</label>
+          <textarea class="new-survey-description"></textarea>
+        </div>
+        <div class="survey-designer-add-new-question-btn">Add Question</div>
+        <div class="survey-designer-question">
+          <label class="survey-type-label">Survey Type - </label>
+          <select class="new-survey-type">
+            <option value="radio">Radio</option>
+            <option value="short-answer">Short Answer</option>
+            <option value="long-answer">Long Answer</option>
+          </select>
+          <label class="survey-type-label">Question: </label>
+          <input class="new-survey-question-index">
+          <div class="new-survey-delete-btn">Delete
+          </div>
+        </div>
+        <div class="survey-designer-btn-wrapper">
+          <div class="survey-designer-save-btn">Save</div>
+          <div class="survey-designer-cancel-btn">Cancel</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

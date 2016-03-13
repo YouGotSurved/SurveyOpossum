@@ -21,6 +21,7 @@ $default-btn-gradient: linear-gradient(to top, #aaa, #eee);
 $default-btn-gradient-hover: linear-gradient(to top, #eee, #aaa);
 
 body {
+  min-width: 1000px;
   margin: 1% 5%;
   font: {
     family: $default-font-family;
@@ -42,7 +43,7 @@ body {
 }
 
 .global-footer-top {
-  // border: 1px dashed blue; 
+  // border: 1px dashed blue;
   border-bottom: 0px;
   border-radius: 5px 5px 0 0;
 }

@@ -1,0 +1,37 @@
+body {
+  margin: 1%;
+}
+
+.survey-info-container,
+.survey-question-container,
+.survey-btn-container {
+  display: block;
+  border: 1px solid black;
+  width: 40%;
+  border-radius: 5px;
+  margin: 1em;
+  padding: 1em;
+}
+
+.survey-btn-container {
+  text-align: center;
+}
+
+.survey-finished-question-container {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5em;
+  padding: 0.5em;
+  width: auto;
+}
+
+.survey-finished-question {
+  display: inline-block;
+}
+
+.survey-finished-type {
+  /*float: right;*/
+  display: inline-block;
+  margin-left: 150px;
+}

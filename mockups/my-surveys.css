@@ -1,0 +1,102 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0 5%;
+}
+
+.my-surveys-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  padding-top: 4em;
+}
+
+.my-surveys-title {
+  width: 15%;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+}
+
+.my-surveys-survey-wrapper{
+  border: 1px solid #ccc;
+  margin: 2em;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.my-surveys-survey-date-name-desc{
+  display: inline-block;
+  width: 40%;
+  padding: 0 0 0 7em;
+}
+
+.my-surveys-survey{
+  margin: 15px 0;
+}
+
+#mysurvey-date-created{
+  font-size: .8em;
+}
+
+#mysurvey-name{
+  font-size: 1.5em;
+}
+
+#mysurvey-desc{
+  font-size: .8em;
+}
+
+.my-surveys-response-number{
+  vertical-align: top;
+  margin-top: 1.5em;
+  display: inline-block;
+  width: 7%;
+  padding-right: 7px;
+  background-image: linear-gradient(to top, #ddd, #fff);
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.my-surveys-responses{
+  text-align: center;
+  padding: 15px 0 15px 9px;
+}
+
+.my-surveys-btn-container{
+  vertical-align: top;
+  width: 35%;
+  display: inline-block;
+  text-align: right;
+}
+
+.my-surveys-btn{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding: 4px 6px;
+  margin: 4px 0;
+  background-image: linear-gradient(to top, #aaa, #eee);
+  border-radius: 5px;
+}
+
+.my-surveys-btn:hover{
+  background-image: linear-gradient(to top, #eee, #aaa);
+}
+
+#mysurvey-publish{
+  background-image: linear-gradient(to top, #00ff00, #2dc232);
+}
+
+#mysurvey-publish:hover{
+  background-image: linear-gradient(to top, #2dc232, #00ff00);
+}
+
+#mysurvey-delete{
+  background-image: linear-gradient(to top, #ff0000, #c71422);
+}
+
+#mysurvey-delete:hover{
+  background-image: linear-gradient(to top, #c71422, #ff0000);
+  color: #fff
+}
