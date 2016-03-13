@@ -35,6 +35,7 @@ class SurveysController < ApplicationController
   end
 
   def take
+    @taker = Taker.create
   end
 
   def store
@@ -81,7 +82,7 @@ class SurveysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:title, :author_id, :description, :link ,questions_attributes: [:id, :order_number, :question_type, :text, :required, answers_attributes: [:id, :text]] )
+      params.require(:survey).permit(:title, :author_id, :description, :link ,questions_attributes: [:id, :order_number, :question_type, :text, :required, answers_attributes: [:id, :text, :taker_id]] )
     end
 
 

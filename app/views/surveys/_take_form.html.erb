@@ -38,6 +38,7 @@
           <% else %>
             Answer <%= fff.label :text %>
             <%= fff.text_area :text, size: "24x6" %>
+          <%= fff.hidden_field :taker_id, :value => @taker.id%>
           <% end %>
 
         </div>
