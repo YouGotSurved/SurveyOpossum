@@ -33,7 +33,6 @@
       <%= ff.text_field :order_number, placeholder: "Order"  %>
       <%= ff.select :question_type, [['YesNo', 1], ['ShortAnswer', 2], ['LongAnswer', 3]] %>
       <%= ff.hidden_field :survey_id, :value => @survey.id%>
-
     </div>
     <% end %>
   <div class="actions">

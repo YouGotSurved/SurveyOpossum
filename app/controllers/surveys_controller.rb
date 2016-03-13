@@ -35,13 +35,21 @@ class SurveysController < ApplicationController
   end
 
   def take
+    @taker = Taker.create
   end
 
   def store
+    survey = Survey.find(params[:id])
 
-    # if @survey.update(survey_params)
-    #   redirect_to surveys_url, notice: "Thanks for completing this survey"
-    # end
+    if survey.update!(survey_params)
+      survey.reload
+      redirect_to surveys_url, notice: "Thanks for completing this survey #{survey_params}"
+    end
+  end
+
+  def results
+    @survey = Survey.find(params[:id])
+    # survey = Survey.find(params[:id])
   end
 
   # PATCH/PUT /surveys/1
@@ -74,13 +82,9 @@ class SurveysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:title, :author_id, :description, :link, questions_attributes: [:id, :survey_id, :order_number, :question_type, :text, :required])
-      # params.require(:survey.questions).permit(answers_attributes: [:id, :question_id, :text]))
+      params.require(:survey).permit(:title, :author_id, :description, :link ,questions_attributes: [:id, :order_number, :question_type, :text, :required, answers_attributes: [:id, :text, :taker_id]] )
     end
 
-    # def survey_answer_params
-    #   params.require(:survey.questions).permit(answers_attributes: [:id, :question_id, :text])
-    # end
 
 
 end
