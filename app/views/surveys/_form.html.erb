@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    <%= f.text_field :link, :value => url_for( :controller => 'surveys', :action => 'take', :only_path => false ), :readonly => true, :size => 50 %>
   </div>
   <% f.label :author_id %><br>
   <%= f.hidden_field :author_id, :value => session[:author_id] %>
