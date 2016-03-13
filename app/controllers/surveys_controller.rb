@@ -44,7 +44,7 @@ class SurveysController < ApplicationController
     if survey.update!(survey_params)
 
       survey.reload
-      redirect_to surveys_url, notice: "Thanks for completing this survey #{survey_params}"
+      redirect_to surveys_url, notice: "Thanks for completing this survey!"
     end
   end
 
