@@ -35,17 +35,20 @@ class SurveysController < ApplicationController
   end
 
   def take
-
   end
 
   def store
     survey = Survey.find(params[:id])
 
     if survey.update!(survey_params)
-
       survey.reload
       redirect_to surveys_url, notice: "Thanks for completing this survey #{survey_params}"
     end
+  end
+
+  def results
+    @survey = Survey.find(params[:id])
+    # survey = Survey.find(params[:id])
   end
 
   # PATCH/PUT /surveys/1

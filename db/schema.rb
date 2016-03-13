@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311204734) do
+ActiveRecord::Schema.define(version: 20160313062753) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
     t.text     "text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "taker_id"
   end
 
   create_table "authors", force: :cascade do |t|
@@ -52,6 +53,13 @@ ActiveRecord::Schema.define(version: 20160311204734) do
     t.string   "link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "takers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "taken_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # get '/surveys/:id/take', to: 'surveys#take'
   patch '/surveys/take/:id', to: 'surveys#store'
 
+get 'surveys/results'
+
   resources :authors
   resources :surveys
-
+resources :answers
 
   get 'session/login'
   post 'session/login'
