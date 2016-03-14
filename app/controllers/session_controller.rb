@@ -4,15 +4,23 @@ class SessionController < ApplicationController
   end
 
   def login
-    author = Author.find_by_name(params[:name])
-    if author && author.authenticate(params[:password])
-      session[:author_id] = author.id
-      session[:role] = "author"
-      redirect_to surveys_path, notice: "You have succesfully logged in!"
+    if !session[:author_id]
+      author = Author.find_by_name(params[:name])
+      if author && author.authenticate(params[:password])
+        session[:author_id] = author.id
+        session[:role] = "author"
+        redirect_to surveys_path, notice: "You have succesfully logged in!"
+      else
+        if author
+          flash.now[:alert] = "Login failed: invalid email or password."
+        end
+        render "login"
+      end
+
     else
-      flash.now[:alert] = "Login failed: invalid email or password."
-      render "login"
+      redirect_to surveys_path
     end
+
   end
 
   def logout

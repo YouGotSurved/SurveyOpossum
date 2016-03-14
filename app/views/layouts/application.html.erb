@@ -14,11 +14,21 @@
         Survey <img alt="Opossum" height="50" width="50" src="<%= asset_url("possum-icon.png")%>" class="possum-logo"> Opossum
       </div>
       <ul class="global-nav-container">
-        <li class="global-nav-btn" id="my-survey-btn"><a href="#" class="global-nav-btn-link">My Surveys</a></li>
-        <li class="selected-global-nav-btn" id="survey-deisgner-btn"><a href="#" class="selected-global-nav-btn-link">Survey Designer</a></li>
-        <li class="global-nav-btn" id="profile-btn"><a href="#" class="global-nav-btn-link">Profile</a></li>
+        <li class="global-nav-btn" id="my-survey-btn"><%= link_to "My Surveys", { controller: "session", action: "login" }, class: "global-nav-btn-link" %></li>
+        <li class="global-nav-btn" id="survey-deisgner-btn"><%= link_to "Survey Designer", { controller: "surveys", action: "new" }, class: "global-nav-btn-link" %></li>
+        <% if session[:author_id] %>
+          <li class="global-nav-btn" id="profile-btn">
+            <%= link_to_if(session[:author_id] != nil, "Profile", { controller: "authors", action: "show", id: session[:author_id] }, class: "global-nav-btn-link")  %></li>
+        <% else %>
+          <li class="global-nav-btn" id="my-survey-btn"><%= link_to "Profile", { controller: "session", action: "login" }, class: "global-nav-btn-link" %></li>
+        <% end %>
         <li class="global-nav-btn" id="support-btn"><a href="#" class="global-nav-btn-link">Support</a></li>
-        <li class="global-nav-btn" id="logout-btn"><a href="#" class="global-nav-btn-link">Logout</a></li>
+        <% if session[:author_id] %>
+          <li class="global-nav-btn" id="profile-btn">
+            <%= link_to_if(session[:author_id] != nil, "Logout", { controller: "session", action: "logout" }, class: "global-nav-btn-link")  %></li>
+        <% else %>
+          <li class="global-nav-btn" id="my-survey-btn"><%= link_to "Logout", { controller: "session", action: "login" }, class: "global-nav-btn-link" %></li>
+        <% end %>
       </ul>
     </header>
 
@@ -32,19 +42,27 @@
             Product
           </div>
           <div class="global-footer-product">
-            <a href="#">My Surveys</a>
+            <%= link_to "My Surveys", { controller: "session", action: "login" } %>
           </div>
           <div class="global-footer-product">
-            <a href="#">Survey Designer</a>
+            <%= link_to "Survey Designer", { controller: "surveys", action: "new" } %>
           </div>
           <div class="global-footer-product">
-            <a href="#">Profile</a>
+            <% if session[:author_id] %>
+              <%= link_to "Profile", { controller: "authors", action: "show", id: session[:author_id] } %>
+            <% else %>
+              <%= link_to "Profile", { controller: "session", action: "login" } %>
+            <% end %>
           </div>
           <div class="global-footer-product">
             <a href="#">Support</a>
           </div>
           <div class="global-footer-product">
-            <a href="#">Logout</a>
+            <% if session[:author_id] %>
+              <%= link_to "Logout", { controller: "session", action: "logout" } %>
+            <% else %>
+              <%= link_to "Logout", { controller: "session", action: "login" } %>
+            <% end %>
           </div>
         </div> <!--End global-footer-product-->
         <div class="global-footer-company-container">
@@ -94,11 +112,6 @@
         </div>
       </div> <!--End sub-global-footer -->
     </footer>
-
-    <% if session[:author_id] %>
-      <%= link_to "Update Profile", author_path(session[:author_id]) %>
-      <%= link_to "Log out", session_logout_path %>
-    <% end %>
 
   </body>
 </html>
