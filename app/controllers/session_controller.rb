@@ -11,12 +11,16 @@ class SessionController < ApplicationController
         session[:role] = "author"
         redirect_to surveys_path, notice: "You have succesfully logged in!"
       else
+        if author
+          flash.now[:alert] = "Login failed: invalid email or password."
+        end
         render "login"
       end
-      flash.now[:alert] = "Login failed: invalid email or password."
+
     else
       redirect_to surveys_path
     end
+
   end
 
   def logout

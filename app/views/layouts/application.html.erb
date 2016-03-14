@@ -15,7 +15,7 @@
         Survey <img alt="Opossum" height="50" width="50" src="<%= asset_url("possum-icon.png")%>" class="possum-logo"> Opossum
       </div>
       <ul class="global-nav-container">
-        <li class="global-nav-btn" id="my-survey-btn"><a href="#" class="global-nav-btn-link">My Surveys</a></li>
+        <li class="global-nav-btn" id="my-survey-btn"><%= link_to "My Surveys", { controller: "session", action: "login" }, class: "global-nav-btn-link" %></li>
         <li class="global-nav-btn" id="survey-deisgner-btn"><a href="#" class="global-nav-btn-link">Survey Designer</a></li>
         <li class="global-nav-btn" id="profile-btn"><a href="#" class="global-nav-btn-link">Profile</a></li>
         <li class="global-nav-btn" id="support-btn"><a href="#" class="global-nav-btn-link">Support</a></li>
