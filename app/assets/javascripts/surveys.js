@@ -9,7 +9,7 @@ $(function () {
 
   var numQuestions = $("[id*='survey_questions_attributes_']").parent().length;
 
-  $(".actions").prepend('<input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn">');
+  // $(".actions").prepend('<input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn">');
 
   console.log("Number of questions => " + numQuestions);
 
@@ -21,7 +21,7 @@ $(function () {
 
     $("#add-question-btn").on("click", function(e){
       e.preventDefault();
-      
+
       console.log("*** click add button ***");
 
       htmlStr = "";

@@ -11,41 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="create-account-wrapper">
+  <div class="create-account-box">
+    <div class="create-account-box-intro">
+      Please fill out the fields below. <br>  Starred fields are required to proceed.
+    </div>
+    <div class="create-account-labels">
+
+  <div class="create-account-label">
     <%= f.label :name %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :password %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :email %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :phone %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :phone %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :address %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :address %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :city %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :city %>
   </div>
-  <div class="field">
+  <div class="create-account-label">
     <%= f.label :state %><br>
+      </div>
+      <div class="create-account-input">
     <%= f.text_field :state %>
-  </div>  <div class="field">
+  </div>  <div class="create-account-label">
       <%= f.label :age %><br>
+  </div>
+  <div class="create-account-input">
       <%= f.text_field :age %>
     </div>
-    <div class="field">
+    <div class="create-account-label">
       <%= f.label :gender %><br>
+        </div>
+        <div class="create-account-input">
       <%= f.text_field :gender %>
     </div>  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+  </div>
+</div>
