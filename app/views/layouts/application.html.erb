@@ -20,7 +20,7 @@
           <li class="global-nav-btn" id="profile-btn">
             <%= link_to_if(session[:author_id] != nil, "Profile", { controller: "authors", action: "show", id: session[:author_id] }, class: "global-nav-btn-link")  %></li>
         <% else %>
-          <li class="global-nav-btn" id="my-survey-btn"><%= link_to "Profile", { controller: "session", action: "login" }, class: "global-nav-btn-link" %></li>
+          <li class="global-nav-btn" id="my-survey-btn"><%= link_to "Profile", { controller: "session", action: "signup" }, class: "global-nav-btn-link" %></li>
         <% end %>
         <li class="global-nav-btn" id="support-btn"><a href="#" class="global-nav-btn-link">Support</a></li>
         <% if session[:author_id] %>
@@ -51,7 +51,7 @@
             <% if session[:author_id] %>
               <%= link_to "Profile", { controller: "authors", action: "show", id: session[:author_id] } %>
             <% else %>
-              <%= link_to "Profile", { controller: "session", action: "login" } %>
+              <%= link_to "Profile", { controller: "session", action: "signup" } %>
             <% end %>
           </div>
           <div class="global-footer-product">
