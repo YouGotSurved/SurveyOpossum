@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   root 'session#login'
 
-  get '/surveys/take/:id', to: 'surveys#take'
-  # get '/surveys/:id/take', to: 'surveys#take'
-  patch '/surveys/take/:id', to: 'surveys#store'
+  get '/surveys/:id/take', to: 'surveys#take'
+  patch '/surveys/:id/take', to: 'surveys#store'
 
-get 'surveys/results'
+  get 'surveys/results'
 
   resources :authors
   resources :surveys
-resources :answers
+  resources :answers
 
   get 'session/login'
   post 'session/login'
