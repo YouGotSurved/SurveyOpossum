@@ -43,19 +43,27 @@
             Product
           </div>
           <div class="global-footer-product">
-            <a href="#">My Surveys</a>
+            <%= link_to "My Surveys", { controller: "session", action: "login" } %>
           </div>
           <div class="global-footer-product">
             <a href="#">Survey Designer</a>
           </div>
           <div class="global-footer-product">
-            <a href="#">Profile</a>
+            <% if session[:author_id] %>
+              <%= link_to "Profile", { controller: "authors", action: "show", id: session[:author_id] } %>
+            <% else %>
+              <%= link_to "Profile", { controller: "session", action: "login" } %>
+            <% end %>
           </div>
           <div class="global-footer-product">
             <a href="#">Support</a>
           </div>
           <div class="global-footer-product">
-            <a href="#">Logout</a>
+            <% if session[:author_id] %>
+              <%= link_to "Logout", { controller: "session", action: "logout" } %>
+            <% else %>
+              <%= link_to "Logout", { controller: "session", action: "login" } %>
+            <% end %>
           </div>
         </div> <!--End global-footer-product-->
         <div class="global-footer-company-container">
