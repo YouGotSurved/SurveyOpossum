@@ -30,8 +30,8 @@
         <div>
           <%=ff.object.text%> <br>
           <% if ff.object.question_type == "YesNo" %>
-            Answer <%= radio_button_tag(:text, "Yes") %> <%= label_tag(:text_yes, "Yes") %>
-            <%= radio_button_tag(:text, "No") %> <%= label_tag(:text_no, "No") %>
+            Answer <%= fff.radio_button(:text, "Yes") %> <%= label_tag(:text_yes, "Yes") %>
+            <%= fff.radio_button(:text, "No") %> <%= label_tag(:text_no, "No") %>
           <% elsif ff.object.question_type == "ShortAnswer" %>
             Answer <%= fff.label :text %>
             <%= fff.text_field :text %>
