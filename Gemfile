@@ -4,10 +4,10 @@ ruby '2.3.0'
 gem 'puma'
 gem 'rails_12factor'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
+
+# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -40,12 +40,13 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'sqlite3'
   gem 'rails-footnotes', '~> 4.0'
   gem 'sqlite3'
-  # Use SCSS for stylesheets
-
 
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

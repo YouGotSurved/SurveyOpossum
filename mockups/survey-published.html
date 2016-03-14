@@ -1,0 +1,55 @@
+<!DOCTYPE>
+
+<html>
+
+  <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="survey-published.css">
+    <title>Survey Name</title>
+  </head>
+
+  <body>
+    <div class="survey-published-wrapper">
+      <div class="survey-published-title">
+        Survey Title
+      </div>
+      <div class="survey-published-wrapper">
+        <div class="survey-published-questions">
+          <div class="survey-published-question">
+            <div class="survey-published-question-index">
+              What is your gender?
+            </div>
+            <div class="survey-published-answer-style-radio-index1">
+              <form class="survey-published-radio">
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+              </form>
+            </div>
+          </div> <!--END QUESTION ONE -->
+          <div class="survey-published-question">
+            <div class="survey-published-question-index">
+              What is your name?
+            </div>
+            <div class="survey-published-answer-style-short-index2">
+              <input class="survey-published-input" id="published-index2">
+            </div>
+          </div> <!-- END QUESTION TWO -->
+          <div class="survey-published-question">
+            <div class="survey-published-question-index">
+              What is your background in the programming industry?
+            </div>
+            <div class="survey-published-answer-style-long-index3">
+              <textarea class="survey-published-textarea" id="published-index3"></textarea>
+            </div>
+          </div><br> <!-- END QUESTION THREE -->
+        </div>
+        <div class="survey-published-btn-container">
+          <div class="survey-published-btn" id="survey-published-btn-submit">Submit</div>
+          <div class="survey-published-btn" id="survey-published-btn-delete">Delete</div>
+        </div>
+      </div> <!-- End Wrapper -->
+    </div>
+  </body>
+</html>

@@ -1,12 +1,26 @@
 Rails.application.routes.draw do
+
+  root 'session#login'
+
+  get '/surveys/take/:id', to: 'surveys#take'
+  # get '/surveys/:id/take', to: 'surveys#take'
+  patch '/surveys/take/:id', to: 'surveys#store'
+
+get 'surveys/results'
+
   resources :authors
   resources :surveys
+resources :answers
+
   get 'session/login'
+  post 'session/login'
 
   get 'session/logout'
+  post 'session/login'
+
 
   get 'session/signup'
-
+  post 'session/signup'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

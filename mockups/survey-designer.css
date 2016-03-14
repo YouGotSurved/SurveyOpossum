@@ -1,0 +1,120 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0 5%;
+}
+
+.survey-designer-wrapper{
+  background: #eee;
+  padding-top: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.survey-designer-title{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+}
+
+.survey-designer-survey-wrapper{
+  border: 1px solid #ccc;
+  margin: 2em;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.survey-designer-survey-title-description{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.new-survey-title,
+.new-survey-description {
+  font-size: 1em;
+  width: 390px;
+  margin: 1.5em auto;
+}
+
+.new-survey-description{
+  height: 7em;
+  max-width: 390px;
+  max-height: 7em;
+}
+
+.survey-designer-add-new-question-btn{
+  display: inline-block;
+  margin-left: 4em;
+  font-size: .8em;
+  text-align: center;
+  padding: 5px 1em;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #aaa, #ccc);
+}
+
+.survey-designer-add-new-question-btn:hover{
+  background-image: linear-gradient(to top, #ccc, #aaa);
+}
+
+.survey-type-label{
+  display: inline-block;
+  margin: 3em 0 0 3.2em;
+}
+
+.new-survey-type{
+  display: inline-block;
+}
+
+.new-survey-question-index{
+  font-size: 1em;
+  width: 350px;
+}
+
+.new-survey-delete-btn{
+  display: inline-block;
+  font-size: .8em;
+  text-align: center;
+  padding: 5px 1em;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #ff0000, #c71422);
+  margin-left: 2em;
+}
+
+.new-survey-delete-btn:hover{
+  background-image: linear-gradient(to top, #c71422, #ff0000);
+  color: white;
+}
+
+.survey-designer-btn-wrapper{
+  width: 300px;
+  margin: auto;
+  margin-top: 4em;
+}
+
+.survey-designer-btn-wrapper div{
+  display: inline-block;
+  font-size: .8em;
+  text-align: center;
+  padding: 5px 1em;
+  border-radius: 5px;
+}
+
+.survey-designer-save-btn{
+  background-image: linear-gradient(to top, #00ff00, #2dc232);
+}
+
+.survey-designer-save-btn:hover{
+  background-image: linear-gradient(to top, #2dc232, #00ff00);
+}
+
+.survey-designer-cancel-btn{
+  background-image: linear-gradient(to top, #ff0000, #c71422);
+  float: right;
+}
+
+.survey-designer-cancel-btn:hover{
+  background-image: linear-gradient(to top, #c71422, #ff0000);
+  color: #fff;
+}

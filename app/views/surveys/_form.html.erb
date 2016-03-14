@@ -16,18 +16,29 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.number_field :author_id %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
-  </div>
+  <% if @survey.id %>
+    <div class="field">
+      <%= f.label :link %><br>
+      <%= f.text_field :link, :value => url_for( :controller => 'surveys', :action => 'take', :only_path => false ), :readonly => true, :size => 50 %>
+    </div>
+  <% end %>
+  <% f.label :author_id %><br>
+  <%= f.hidden_field :author_id, :value => session[:author_id] %>
+
+  <h3> Questions </h3>
+    <%= f.fields_for :questions do |ff| %>
+    <div>
+      <%= ff.text_field :text, placeholder: "Your Question" %>
+      <%= ff.text_field :order_number, placeholder: "Order"  %>
+      <%= ff.select :question_type, [['YesNo', 'YesNo' ], ['ShortAnswer', 'ShortAnswer'], ['LongAnswer', 'LongAnswer']] %>
+      <%= ff.hidden_field :survey_id, :value => @survey.id%>
+    </div>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

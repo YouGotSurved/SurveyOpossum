@@ -1,0 +1,82 @@
+body {
+  width: 1350px;
+  margin: 1%;
+}
+
+.survey-info-container,
+.survey-question-container,
+.survey-btn-container {
+  display: block;
+  border: 1px solid black;
+  width: 40%;
+  border-radius: 5px;
+  margin: 1em;
+  padding: 1em;
+}
+
+.survey-btn-container {
+  text-align: center;
+}
+
+.survey-finished-question-container {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5em;
+  padding: 0.5em;
+  width: auto;
+}
+
+.survey-finished-question {
+  display: inline-block;
+}
+
+.survey-finished-type {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.order-input {
+  margin-top: 5px;
+}
+
+.create-survey-btn {
+  background: green;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid green;
+}
+
+.clear-btn {
+  color: white;
+  background: orange;
+  border-radius: 5px;
+  border: 1px solid orange;
+}
+
+.cancel-btn {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.add-question-btn {
+  color: white;
+  background: green;
+  border-radius: 5px;
+  border: 1px solid green;
+}
+
+.remove-question-btn {
+  color: white;
+  background: red;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.edit-question-btn {
+  color: white;
+  background: darkblue;
+  border-radius: 5px;
+  border: 1px solid darkblue;
+}

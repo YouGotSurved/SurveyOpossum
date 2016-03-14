@@ -1,0 +1,77 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0 5%;
+}
+
+.survey-review-wrapper{
+  background: #eee;
+  padding-top: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.survey-review-title{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+}
+
+.survey-review-questions{
+  border: 1px solid #ccc;
+  margin: 2em;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.survey-review-question{
+  margin: 2em 0 0 2em;
+}
+
+.survey-review-question-index{
+  margin: 1em 0;
+}
+
+.survey-review-input{
+  width: 20em;
+  font-size: 1em;
+}
+
+.survey-review-textarea{
+  width: 30em;
+  max-width: 30em;
+  height: 15em;
+  max-height: 15em;
+  font-size: 1em;
+}
+
+.survey-review-btn-container{
+  width: 30%;
+  margin: auto;
+}
+
+.survey-review-btn{
+  display: inline-block;
+  text-align: center;
+  padding: 5px 1em;
+  border-radius: 5px;
+}
+
+#survey-review-btn-return{
+  background-image: linear-gradient(to top, #aaa, #eee);
+}
+
+#survey-review-btn-return:hover{
+  background-image: linear-gradient(to top, #eee, #aaa);
+}
+
+#survey-review-btn-delete{
+  background-image: linear-gradient(to top, #ff0000, #c71422);
+  float: right;
+}
+
+#survey-review-btn-delete:hover{
+  background-image: linear-gradient(to top, #c71422, #ff0000);
+  color: #fff;
+}

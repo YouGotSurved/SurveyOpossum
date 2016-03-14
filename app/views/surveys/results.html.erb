@@ -1,0 +1,46 @@
+<h1> Survey  Information</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @survey.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @survey.author_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @survey.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @survey.link %>
+</p>
+
+
+<h1> Survey Questions</h1>
+<p>
+<% @survey.questions.each do |question| %>
+  <strong>Question Text:</strong>
+  <%= question.text %>
+  <strong>Question Type:</strong>
+  <%= question.question_type %>
+  <strong>Question Order Number:</strong>
+  <%= question.order_number %>
+  <strong>Question Was Required:</strong>
+  <%= question.required %>
+  <br>
+</p>
+
+<% question.answers.each do |question_response| %>
+  <%= question_response.text %>
+    <%= question_response.taker_id %>
+  <br>
+  <% end %>
+
+<% end %>
+
+
+<%= link_to 'Back', surveys_path %>

@@ -1,0 +1,55 @@
+<!DOCTYPE>
+
+<html>
+
+  <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="survey-review.css">
+    <title>Survey Review</title>
+  </head>
+
+  <body>
+    <div class="survey-review-wrapper">
+      <div class="survey-review-title">
+        Survey Title
+      </div>
+      <div class="survey-review-wrapper">
+        <div class="survey-review-questions">
+          <div class="survey-review-question">
+            <div class="survey-review-question-index">
+              What is your gender?
+            </div>
+            <div class="survey-review-answer-style-radio-index1">
+              <form class="survey-review-radio">
+                 <input type="radio" name="gender" value="male" checked> Male
+                 <input type="radio" name="gender" value="female"> Female
+                 <input type="radio" name="gender" value="other"> Other
+               </form>
+            </div>
+          </div> <!--END QUESTION ONE -->
+          <div class="survey-review-question">
+            <div class="survey-review-question-index">
+              What is your name?
+            </div>
+            <div class="survey-review-answer-style-short-index2">
+              <input class="survey-review-input" id="review-index2">
+            </div>
+          </div> <!-- END QUESTION TWO -->
+          <div class="survey-review-question">
+            <div class="survey-review-question-index">
+              What is your background in the programming industry?
+            </div>
+            <div class="survey-review-answer-style-long-index3">
+              <textarea class="survey-review-textarea" id="review-index3"></textarea>
+            </div>
+          </div><br> <!-- END QUESTION THREE -->
+        </div>
+        <div class="survey-review-btn-container">
+          <div class="survey-review-btn" id="survey-review-btn-return">Return</div>
+          <div class="survey-review-btn" id="survey-review-btn-delete">Delete</div>
+        </div>
+      </div> <!-- End Wrapper -->
+    </div>
+  </body>
+</html>
