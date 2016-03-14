@@ -30,6 +30,7 @@ class SessionController < ApplicationController
   end
 
   def signup
+    redirect_to new_author_path
 
   end
 end
