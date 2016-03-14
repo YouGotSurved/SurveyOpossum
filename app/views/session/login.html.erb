@@ -1,17 +1,26 @@
 
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= alert %></p>
-
-<h1>Login</h1>
-<p>Please login below.</p>
-
 <%= form_tag(session_login_path) do %>
 
-  <p><%= label_tag :name %>
+<div class="login-page-wrapper">
+
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
+  
+  <div class="login-page-login-box">
+    <div class="login-box-header">
+      Log In
+    </div>
+    <div class="login-box-input-wrapper">
+
+  <p class="login-box-user-id" ><%= label_tag :name %>
   <%= text_field_tag :name %></p>
 
-  <p><%= label_tag :password %>
+  <p class="login-box-user-password"><%= label_tag :password %>
   <%= password_field_tag :password %></p>
 
-  <%= submit_tag "Log in" %>
+  <%= submit_tag "Log in", class: "login-box-login-btn" %>
 <% end %>
+
+  </div>
+</div>
+</div>
