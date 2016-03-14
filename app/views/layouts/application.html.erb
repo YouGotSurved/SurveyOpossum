@@ -9,14 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
-
     <header class="global-header">
       <div class="global-header-title">
         Survey <img alt="Opossum" height="50" width="50" src="<%= asset_url("possum-icon.png")%>" class="possum-logo"> Opossum
       </div>
       <ul class="global-nav-container">
         <li class="global-nav-btn" id="my-survey-btn"><a href="#" class="global-nav-btn-link">My Surveys</a></li>
-        <li class="global-nav-btn" id="survey-deisgner-btn"><a href="#" class="global-nav-btn-link">Survey Designer</a></li>
+        <li class="selected-global-nav-btn" id="survey-deisgner-btn"><a href="#" class="selected-global-nav-btn-link">Survey Designer</a></li>
         <li class="global-nav-btn" id="profile-btn"><a href="#" class="global-nav-btn-link">Profile</a></li>
         <li class="global-nav-btn" id="support-btn"><a href="#" class="global-nav-btn-link">Support</a></li>
         <li class="global-nav-btn" id="logout-btn"><a href="#" class="global-nav-btn-link">Logout</a></li>
@@ -70,28 +69,28 @@
             Connect
           </div>
           <div class="global-footer-connect">
-            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="https://twitter.com?lang=en"><i class="fa fa-twitter"></i></a>
           </div>
           <div class="global-footer-connect">
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-          </div>
-          <br>
-          <div class="global-footer-connect">
-            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
           </div>
           <div class="global-footer-connect">
-            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+          </div>
+          <div class="global-footer-connect">
+            <a href="https://plus.google.com"><i class="fa fa-google-plus"></i></a>
           </div>
         </div>  <!--End global-footer-connect-->
 </div>
       </div>
       <div class="sub-global-footer">
-        <div class="sub-global-footer-teamname">You Got Surved</div>
+        <div class="sub-global-footer-teamname">Team: &nbsp; You Got Surved</div>
         <div class="sub-global-footer-team">
-          <div class="sub-global-footer-teammembers">Andrew</div>
-          <div class="sub-global-footer-teammembers">Marcia</div>
-          <div class="sub-global-footer-teammembers">Dennis</div>
-          <div class="sub-global-footer-teammembers">Joseph</div>
+          <div class="sub-global-footer-teammembers">Members:</div>
+          <div class="sub-global-footer-teammembers">Marcia Corprew</div>
+          <div class="sub-global-footer-teammembers">Joseph DePompeis</div>
+          <div class="sub-global-footer-teammembers">Andrew Baron</div>
+          <div class="sub-global-footer-teammembers">Dennis Goldin</div>
         </div>
       </div> <!--End sub-global-footer -->
     </footer>
