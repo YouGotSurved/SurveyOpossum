@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def logged_in?
-   redirect_to login_path, notice: "You must log in to access this page" unless session[:author_id]
+   redirect_to session_login_path, notice: "You must log in to access this page" unless session[:author_id]
  end
 
 end
