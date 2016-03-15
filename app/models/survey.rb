@@ -19,6 +19,5 @@ class Survey < ActiveRecord::Base
 
   private def delete_marked_questions
     questions.to_a.delete_if { |q| q.destroy if q.obliterate == "1" }
-    # questions = subset_questions
   end
 end
