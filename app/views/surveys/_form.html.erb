@@ -46,27 +46,43 @@
   <%= f.hidden_field :author_id, :value => session[:author_id] %>
 
   <h3> Questions </h3>
-
-
+    <% if params[:action] == "new" %>
     <%= f.fields_for :questions do |ff| %>
     <div>
+      <%= ff.label :text %>
       <%= ff.text_field :text, placeholder: "Your Question" %>
-      <%= ff.text_field :order_number, placeholder: "Order"  %>
+      <%= ff.label :order_number %>
+      <%= ff.text_field :order_number, placeholder: "Order Number"  %>
+      <%= ff.label :question_type %>
+      <%= ff.select :question_type, [['YesNo', 'YesNo' ], ['ShortAnswer', 'ShortAnswer'], ['LongAnswer', 'LongAnswer']] %>
+      Required? <%= ff.check_box :required %>
+      <%= ff.hidden_field :survey_id, :value => @survey.id%>
+    <% end %>
+    </div>
+
+    <% else %>
+    <%= f.fields_for :questions, f.object.questions.order(:order_number) do |ff| %>
+
+    <div>
+      <%= ff.label :text %>
+      <%= ff.text_field :text, placeholder: "Your Question" %>
+      <%= ff.label :order_number %>
+      <%= ff.text_field :order_number, placeholder: "Order Number"  %>
+      <%= ff.label :question_type %>
       <%= ff.select :question_type, [['YesNo', 'YesNo' ], ['ShortAnswer', 'ShortAnswer'], ['LongAnswer', 'LongAnswer']] %>
       Required? <%= ff.check_box :required %>
       Delete? <%= ff.check_box :obliterate %>
       <%= ff.hidden_field :survey_id, :value => @survey.id%>
-    <!-- </div> -->
     <% end %>
+    </div>
 
-  <!-- <div> -->
+    <% end %>
     <input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn" class="survey-designer-add-question-btn">
-    <!-- <input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn" class="survey-designer-add-new-question-btn"> -->
-  </div>
+
 
   <div class="survey-designer-btn-wrapper actions">
     <%= f.submit 'Create Survey', :class => 'survey-designer-save-btn actions'%>
-    <!-- <div class="survey-designer-cancel-btn">Cancel</div> -->
+
   </div>
 
 <% end %>

@@ -25,7 +25,8 @@
   <h3> Questions </h3>
   <h4> Questions marked with an '*' are required. </h4>
   <ol>
-    <%= f.fields_for :questions do |ff| %>
+
+    <%= f.fields_for :questions, f.object.questions.order(:order_number) do |ff| %>
       <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
       <li>
         <div>
@@ -42,13 +43,15 @@
           <%= fff.hidden_field :taker_id, :value => @taker.id%>
           <% end %>
 
+
+
         </div>
       </li>
       <% end %>
     <% end %>
   </ol>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "COMPLETE SURVEY" %>
   </div>
 
 <% end %>

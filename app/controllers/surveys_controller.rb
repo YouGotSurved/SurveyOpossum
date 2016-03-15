@@ -1,7 +1,8 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
-  # before_action :set_take_survey, only: [:take]
-  before_action :logged_in?
+  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_take_survey, only: [:take, :store, :thankyou]
+  before_action :logged_in?, except: [:take, :store, :thankyou]
+  # skip_before_action :logged_in?, only: [:take, :store]
 
   # GET /surveys
   def index
@@ -20,12 +21,13 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    @survey.questions.build
+
   end
 
   # POST /surveys
   def create
     @survey = Survey.new(survey_params)
-
     if @survey.save
       redirect_to @survey, notice: 'Survey was successfully created.'
     else
@@ -42,20 +44,24 @@ class SurveysController < ApplicationController
 
     if survey.update!(survey_params)
       survey.reload
-      redirect_to surveys_url, notice: "Thanks for completing this survey!"
+      redirect_to answers_url, notice: "Thanks for completing the survey!"
     end
+  end
+
+  def thankyou
   end
 
   def results
     @survey = Survey.find(params[:id])
-    # survey = Survey.find(params[:id])
   end
+
+
 
   # PATCH/PUT /surveys/1
   def update
     p survey_params
     if @survey.update(survey_params)
-      redirect_to @survey, notice: "Survey was successfully updated. #{survey_params}"
+      redirect_to @survey, notice: "Survey was successfully updated."
     else
       render :edit
     end
@@ -77,7 +83,6 @@ class SurveysController < ApplicationController
     def set_take_survey
       @survey = Survey.where(id: params[:id]).first
 
-      redirect_to surveys_url unless @survey != nil && @survey.author_id == session[:author_id]
     end
 
     # Only allow a trusted parameter "white list" through.
