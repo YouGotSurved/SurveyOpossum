@@ -34,6 +34,8 @@
       <%= ff.text_field :text, placeholder: "Your Question" %>
       <%= ff.text_field :order_number, placeholder: "Order"  %>
       <%= ff.select :question_type, [['YesNo', 'YesNo' ], ['ShortAnswer', 'ShortAnswer'], ['LongAnswer', 'LongAnswer']] %>
+      Required? <%= ff.check_box :required %>
+      Delete? <%= ff.check_box :obliterate %>
       <%= ff.hidden_field :survey_id, :value => @survey.id%>
     </div>
     <% end %>

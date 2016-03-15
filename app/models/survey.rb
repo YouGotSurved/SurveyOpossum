@@ -2,6 +2,8 @@ class Survey < ActiveRecord::Base
   validates :title, presence: true
   validates :author_id, presence: true
 
+  before_update :delete_marked_questions
+
   belongs_to :author
   has_many :questions
   has_many :answers, through: :questions
@@ -11,7 +13,12 @@ class Survey < ActiveRecord::Base
     reject_if: :all_blank,
     allow_destroy: true
 
-    accepts_nested_attributes_for :takers,
-      reject_if: :all_blank,
-      allow_destroy: true
+  accepts_nested_attributes_for :takers,
+    reject_if: :all_blank,
+    allow_destroy: true
+
+  private def delete_marked_questions
+    questions.to_a.delete_if { |q| q.destroy if q.obliterate == "1" }
+    # questions = subset_questions
+  end
 end

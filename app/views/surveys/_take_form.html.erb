@@ -23,12 +23,13 @@
   <%= f.hidden_field :author_id, :value => session[:author_id] %>
 
   <h3> Questions </h3>
+  <h4> Questions marked with an '*' are required. </h4>
   <ol>
     <%= f.fields_for :questions do |ff| %>
       <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
       <li>
         <div>
-          <%=ff.object.text%> <br>
+          <%=ff.object.text%> <% if ff.object.required %> * <%end%><br>
           <% if ff.object.question_type == "YesNo" %>
             Answer <%= fff.radio_button(:text, "Yes") %> <%= label_tag(:text_yes, "Yes") %>
             <%= fff.radio_button(:text, "No") %> <%= label_tag(:text_no, "No") %>

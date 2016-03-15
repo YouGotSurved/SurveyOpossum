@@ -20,7 +20,6 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
   end
 
   # POST /surveys
@@ -54,8 +53,9 @@ class SurveysController < ApplicationController
 
   # PATCH/PUT /surveys/1
   def update
+    p survey_params
     if @survey.update(survey_params)
-      redirect_to @survey, notice: 'Survey was successfully updated.'
+      redirect_to @survey, notice: "Survey was successfully updated. #{survey_params}"
     else
       render :edit
     end
@@ -82,7 +82,7 @@ class SurveysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:title, :author_id, :description, :link ,questions_attributes: [:id, :order_number, :question_type, :text, :required, answers_attributes: [:id, :text, :taker_id]] )
+      params.require(:survey).permit(:title, :author_id, :description, :link ,questions_attributes: [:id, :order_number, :question_type, :text, :required, :obliterate, answers_attributes: [:id, :text, :taker_id]] )
     end
 
 
