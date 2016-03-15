@@ -29,10 +29,13 @@
   <%= f.hidden_field :author_id, :value => session[:author_id] %>
 
   <h3> Questions </h3>
-    <%= f.fields_for :questions do |ff| %>
+    <%= f.fields_for :questions, f.object.questions.order(:order_number) do |ff| %>
     <div>
+            <%= ff.label :text %>
       <%= ff.text_field :text, placeholder: "Your Question" %>
-      <%= ff.text_field :order_number, placeholder: "Order"  %>
+      <%= ff.label :order_number %>
+      <%= ff.text_field :order_number, placeholder: "Order Number"  %>
+      <%= ff.label :question_type %>
       <%= ff.select :question_type, [['YesNo', 'YesNo' ], ['ShortAnswer', 'ShortAnswer'], ['LongAnswer', 'LongAnswer']] %>
       <%= ff.hidden_field :survey_id, :value => @survey.id%>
     </div>
