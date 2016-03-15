@@ -1,3 +1,10 @@
+<div class="survey-designer-wrapper">
+
+  <div class="survey-designer-title">
+    Survey Designer
+  </div>
+  <div class="survey-designer-survey-wrapper">
+
 <%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
@@ -11,17 +18,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="survey-designer-survey-title-description">
+    <div class="survey-title-label">
+      <%= f.label :title %><br>
+    </div>
+    <div class="new-survey-title">
+      <%= f.text_field :title %>
+    </div>
+    <div class="survey-description-label">
+      <%= f.label :description %><br>
+    </div>
+    <div class="new-survey-description">
+      <%= f.text_area :description %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+
   <% if @survey.id %>
+
     <div class="field">
       <%= f.label :link %><br>
+    </div>
+    <div class="field">
       <%= f.text_field :link, :value => url_for( :controller => 'surveys', :action => 'take', :only_path => false ), :readonly => true, :size => 50 %>
     </div>
   <% end %>
@@ -29,6 +46,8 @@
   <%= f.hidden_field :author_id, :value => session[:author_id] %>
 
   <h3> Questions </h3>
+
+
     <%= f.fields_for :questions do |ff| %>
     <div>
       <%= ff.text_field :text, placeholder: "Your Question" %>
@@ -37,10 +56,20 @@
       Required? <%= ff.check_box :required %>
       Delete? <%= ff.check_box :obliterate %>
       <%= ff.hidden_field :survey_id, :value => @survey.id%>
-    </div>
+    <!-- </div> -->
     <% end %>
-  <div class="actions">
-    <%= f.submit %>
+
+  <!-- <div> -->
+    <input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn" class="survey-designer-add-question-btn">
+    <!-- <input type="submit" name="add-question-btn" value="Add Question" id="add-question-btn" class="survey-designer-add-new-question-btn"> -->
+  </div>
+
+  <div class="survey-designer-btn-wrapper actions">
+    <%= f.submit 'Create Survey', :class => 'survey-designer-save-btn actions'%>
+    <!-- <div class="survey-designer-cancel-btn">Cancel</div> -->
   </div>
 
 <% end %>
+
+ </div>
+</div>

@@ -1,0 +1,53 @@
+body{
+  font-family: "Arial", sans-serif;
+  margin: 0 5%;
+}
+
+.login-page-wrapper {
+  background: #eee;
+  height: 100%;
+  width: 100%;
+  padding-top: 12em;
+}
+
+.login-page-login-box {
+  border: 1px solid #bbb;
+  background: #ddd;
+  text-align: center;
+  width: 550px;
+  margin: auto;
+  padding: 2.5em 0;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.login-box-header{
+  font-size: 1.3em;
+  padding-bottom: 0.5em;
+}
+
+.login-box-user-id,
+.login-box-user-password {
+  display: block;
+  width: 80%;
+  margin: 1em auto;
+  font-size: .8em;
+  line-height: 190%;
+}
+
+.login-box-login-btn,
+.login-box-create-btn {
+  font-size: .8em;
+  display: inline-block;
+  background: #444;
+  background-image: linear-gradient(to top, #aaa, #eee);
+  width: 20%;
+  padding: 0.5em 0;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.login-box-login-btn:hover,
+.login-box-create-btn:hover {
+  background-image: linear-gradient(to top, #eee, #aaa);
+}
