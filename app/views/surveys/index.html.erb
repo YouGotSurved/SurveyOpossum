@@ -1,4 +1,4 @@
-<div class="my-surveys-wrapper">
+<div class="my-surveys-survey-wrapper">
 
 <p id="notice"><%= notice %></p>
 
@@ -8,27 +8,22 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Author</th>
       <th>Description</th>
       <th>Link</th>
-      <th colspan="3"></th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
-  <tbody class="my-surveys-survey-wrapper">
+  <tbody >
     <% @surveys.each do |survey| %>
       <tr>
         <td class="my-surveys-survey"><%= survey.title %></td>
-        <td class="my-surveys-survey"><%= survey.author_id %></td>
         <td class="my-surveys-survey"><%= survey.description %></td>
         <td class="my-surveys-survey"><%= survey.link %></td>
-        <td class="my-surveys-btn"><%= link_to 'Show', survey %></td>
         <td class="my-surveys-btn"><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td class="my-surveys-btn"><%= link_to 'Take', action: "take", id: survey.id %></td>
         <td class="my-surveys-btn"><%= link_to 'Results', action: "results", id: survey.id %></td>
-        <!-- <td><%= link_to 'Take', controller: "surveys", action: "take", id: survey.id %></td> -->
-<!-- link_to "Profile", controller: "profiles", action: "show", id: @profile -->
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="my-surveys-btn">><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -34,13 +34,15 @@
           <% if ff.object.question_type == "YesNo" %>
             Answer <%= fff.radio_button(:text, "Yes") %> <%= label_tag(:text_yes, "Yes") %>
             <%= fff.radio_button(:text, "No") %> <%= label_tag(:text_no, "No") %>
+            <%= fff.hidden_field :taker_id, :value => @taker.id%>
           <% elsif ff.object.question_type == "ShortAnswer" %>
             Answer <%= fff.label :text %>
             <%= fff.text_field :text %>
+            <%= fff.hidden_field :taker_id, :value => @taker.id%>
           <% else %>
             Answer <%= fff.label :text %>
             <%= fff.text_area :text, size: "24x6" %>
-          <%= fff.hidden_field :taker_id, :value => @taker.id%>
+            <%= fff.hidden_field :taker_id, :value => @taker.id%>
           <% end %>
 
 

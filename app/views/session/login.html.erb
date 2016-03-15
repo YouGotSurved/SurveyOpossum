@@ -5,7 +5,7 @@
 
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
-  
+
   <div class="login-page-login-box">
     <div class="login-box-header">
       Log In
@@ -19,6 +19,10 @@
   <%= password_field_tag :password %></p>
 
   <%= submit_tag "Log in", class: "login-box-login-btn" %>
+
+
+<%= link_to 'Sign Up', new_author_path, class: "login-box-login-btn" %>
+
 <% end %>
 
   </div>

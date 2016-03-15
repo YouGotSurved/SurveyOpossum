@@ -21,23 +21,19 @@
 
 
 <h1> Survey Questions</h1>
-<p>
-<% @survey.questions.each do |question| %>
-  <strong>Question Text:</strong>
-  <%= question.text %>
-  <strong>Question Type:</strong>
-  <%= question.question_type %>
-  <strong>Question Order Number:</strong>
-  <%= question.order_number %>
-  <strong>Question Was Required:</strong>
-  <%= question.required %>
+<br>
+<% @survey.questions.order(:order_number).each do |question| %>
+  <p><strong>Question Order Number:</strong>
+  <%= question.order_number %> </p>
+  <p><strong>Question Text:</strong>
+  <%= question.text %></p>
+  <p><strong>Question Was Required:</strong>
+  <%= question.required ? question.required : "false"  %></p>
   <br>
-</p>
-
-<% question.answers.each do |question_response| %>
-  <%= question_response.text %>
-    <%= question_response.taker_id %>
-  <br>
+  <% question.answers.each do |question_response| %>
+    <p>User #<%= question_response.taker_id %> Response: <%= question_response.text %></p>
+    <p></p>
+    <br>
   <% end %>
 
 <% end %>
